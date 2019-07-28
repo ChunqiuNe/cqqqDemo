@@ -1,0 +1,152 @@
+html {
+    font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+    width: 100%;
+}
+
+.page-loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f3f3f3;
+    z-index: 999999999;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.page-loader__spinner {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+.page-loader__spinner svg {
+    animation: rotate 2s linear infinite;
+    transform-origin: center center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.page-loader__spinner svg circle {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    stroke-linecap: round;
+}
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+    }
+}
+@keyframes color {
+    100%,
+    0% {
+        stroke: #ff5652;
+    }
+    40% {
+        stroke: #2196F3;
+    }
+    66% {
+        stroke: #32c787;
+    }
+    80%,
+    90% {
+        stroke: #ffc107;
+    }
+}
+
+#app {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #b8e5f8;
+    background-image: url("http://cdn.tycoding.cn/db29b0fbd2f78dd8c1b7.db29b0f.png");
+}
+
+#login {
+    position: absolute;
+    max-width: 100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bear>img{
+    position: absolute;
+    top: 136px;
+    left: 50%;
+    width: 10rem;
+    -webkit-transform: translate(-50%, -83%);
+    transform: translate(-50%, -83%);
+    z-index: 1;
+}
+
+#main {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+}
+
+.el-card {
+    margin-top: 35%;
+}
+
+.header {
+    padding: 24px 20px;
+}
+.login-card > .el-card__header {
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.el-card{
+    border: none !important;
+}
+
+.header > .item {
+    font-size: 28px;
+}
+.btn {
+    width: 100%;
+    border-radius: 28px;
+}
+
+#form {
+    padding: 0 30px;
+}
+
+.check {
+    float: left;
+}
+
+.tips {
+    font-size: 13px;
+    text-align: right;
+    color: #409EFE;
+    text-decoration: none;
+}
+
+.tips:hover {
+    color: #3a8ee6;
+}

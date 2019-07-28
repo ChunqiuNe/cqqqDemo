@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>后台首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" data-th-href="@{/css/index.css}">
+    <div th:replace="common/css"></div>
+</head>
+<body>
+<!-- vue入口 -->
+<div id="app">
+    <div :class="'app-wrapper' + sidebarFlag">
+
+        <!-- aside -->
+        <div th:replace="common/side"></div>
+
+        <!-- container -->
+        <el-container class="main-container">
+            <!-- header -->
+            <div style="background-color: rgb(84, 92, 100);" th:replace="common/header"></div>
+
+            <!-- main -->
+            <el-main class="dashboard-container">
+                <el-card>
+                    <span>
+                        <a href="https://github.com/TyCoding/permission/" target="_blank">
+                            <img src="https://img.shields.io/badge/permission-权限管理项目-green.svg" alt="Build Status">
+                        </a>
+                        <img src="https://img.shields.io/badge/Spring%20Boot-2.1.2.RELEASE-yellowgreen.svg" alt="Downloads">
+                        <img src="https://img.shields.io/badge/Vue.js-blue.svg" alt="Coverage Status">
+                    </span>
+                    <el-collapse v-model="activeNames">
+                        <el-collapse-item title="完整的权限管理项目模板" name="1">
+                            <div>基于 SpringBoot-2.1.2.RELEASE</div>
+                            <div>基于 Shiro权限框架</div>
+                            <div>基于 Vue前端框架</div>
+                        </el-collapse-item>
+                        <el-collapse-item title="完善的项目设计" name="2">
+                            <div>后端采用SpringBoot，前端采用Vue开发，RestFul风格API</div>
+                            <div>项目架构设计已经模块化设计</div>
+                        </el-collapse-item>
+                        <el-collapse-item title="食用说明（必看）" name="3">
+                            <div>本项目由 <a href="https://github.com/TyCoding/" target="_blank">TyCoding</a> 开发，但是由于本人技术有限，项目中有不完整的地方</div>
+                            <div>如果前辈有更好的解决方案，请尽快联系我。如果对你的学习有帮助，欢迎点击项目右上角Star给作者一些鼓励</div>
+                        </el-collapse-item>
+                    </el-collapse>
+                </el-card>
+            </el-main>
+        </el-container>
+    </div>
+</div>
+<div th:replace="common/js"></div>
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
+</body>
+</html>

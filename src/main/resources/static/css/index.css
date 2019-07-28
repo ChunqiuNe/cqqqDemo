@@ -1,0 +1,12 @@
+.dashboard-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.el-collapse-item__header {
+    display: block !important;
+}
+
+a {
+    color: red
+}
