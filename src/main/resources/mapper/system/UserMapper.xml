@@ -21,9 +21,12 @@
     </select>
 
     <select id="findById" resultType="cn.tycoding.system.entity.UserWithRole">
-        select u.id, u.username, u.create_time, u.avatar, u.description, u.status, u.phone, u.sex, u.dept_id, ur.role_id roleId
+        select u.id, u.username,u.password, u.create_time, u.avatar, u.description, u.status, u.phone, u.sex, u.dept_id, ur.role_id roleId
         from tb_user u
                left join tb_user_role ur on (u.id = ur.user_id)
         where u.id = #{id}
     </select>
+
+
+
 </mapper>

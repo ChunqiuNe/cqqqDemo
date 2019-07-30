@@ -6,6 +6,7 @@ import cn.tycoding.common.dto.QueryPage;
 import cn.tycoding.common.dto.ResponseCode;
 import cn.tycoding.common.enums.StatusEnums;
 import cn.tycoding.common.exception.GlobalException;
+import cn.tycoding.common.utils.PasswordHelper;
 import cn.tycoding.system.entity.*;
 import cn.tycoding.system.service.DeptService;
 import cn.tycoding.system.service.MenuService;
@@ -45,6 +46,8 @@ public class UserController extends BaseController {
 
     @Autowired
     private DeptService deptService;
+    @Autowired
+    private PasswordHelper PasswordHelper;
 
     @GetMapping("/info")
     public ResponseCode info() {
@@ -65,6 +68,7 @@ public class UserController extends BaseController {
         Map<String, Object> map = new HashMap<>();
         map.put("id", user.getId());
         map.put("username", user.getUsername());
+        map.put("password", user.getPassword());
         map.put("avatar", user.getAvatar());
         map.put("phone", user.getPhone());
         map.put("sex", user.getSex());
@@ -95,7 +99,9 @@ public class UserController extends BaseController {
     @RequiresPermissions("user:add")
     public ResponseCode add(@RequestBody UserWithRole user) {
         try {
+            System.out.println("1"+user.getPassword());
             userService.add(user);
+            System.out.println("2"+user.getPassword());
             return ResponseCode.success();
         } catch (Exception e) {
             e.printStackTrace();
@@ -117,8 +123,9 @@ public class UserController extends BaseController {
     @Log("更新用户")
     @PostMapping("/update")
     @RequiresPermissions("user:update")
-    public ResponseCode update(@RequestBody UserWithRole user) {
+    public ResponseCode update(@RequestBody UserWithRole user ) {
         try {
+            System.out.println(user.getPassword());
             userService.update(user);
             return ResponseCode.success();
         } catch (Exception e) {
@@ -156,6 +163,7 @@ public class UserController extends BaseController {
     @GetMapping("/updatePassword")
     public ResponseCode updatePassword(String password) {
         try {
+            System.out.println("1"+password);
             userService.updatePassword(password);
             return ResponseCode.success();
         } catch (Exception e) {

@@ -37,7 +37,9 @@ public class BaseController {
     }
 
     protected void login(AuthenticationToken token) {
+        System.out.println(token);
         getSubject().login(token);
+
     }
 
     private Map<String, Object> getData(PageInfo<?> pageInfo) {

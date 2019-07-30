@@ -27,8 +27,6 @@ public interface UserService extends BaseService<User> {
     boolean checkName(String name, String id);
 
     void update(UserWithRole user);
-
     void delete(List<Long> keys);
-
     void updatePassword(String password);
 }

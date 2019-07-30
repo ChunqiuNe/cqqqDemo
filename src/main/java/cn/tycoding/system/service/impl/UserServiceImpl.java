@@ -124,7 +124,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     }
 
     @Transactional
-    private void saveUserRole(UserWithRole user) {
+    public void saveUserRole(UserWithRole user) {
         user.getRoleIds().forEach(roleId -> {
             UserRole userRole = new UserRole();
             userRole.setUserId(user.getId());
@@ -136,7 +136,10 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     @Override
     @Transactional
     public void update(UserWithRole user) {
-        user.setPassword(null);
+        // 为什么要将密码存为null？
+//        user.setPassword(null);
+        //  对密码进行加密处理
+        passwordHelper.encryptPassword(user);
         user.setModifyTime(new Date());
         this.updateNotNull(user);
         Example example = new Example(UserRole.class);

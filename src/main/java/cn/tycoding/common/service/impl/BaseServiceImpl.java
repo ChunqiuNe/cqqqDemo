@@ -44,7 +44,6 @@ public class BaseServiceImpl<T> implements BaseService<T> {
         example.createCriteria().andIn(property, ids);
         this.mapper.deleteByExample(example);
     }
-
     @Override
     public void updateAll(T entity) {
         mapper.updateByPrimaryKey(entity);

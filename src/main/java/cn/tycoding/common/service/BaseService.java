@@ -1,5 +1,6 @@
 package cn.tycoding.common.service;
 
+import cn.tycoding.system.entity.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
