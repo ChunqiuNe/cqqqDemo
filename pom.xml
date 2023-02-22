@@ -23,7 +23,7 @@
         <shiro-thymeleaf.version>2.0.0</shiro-thymeleaf.version>
         <tk-mybatis.version>1.1.7</tk-mybatis.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
-        <commons-fileupload.version>1.3.3</commons-fileupload.version>
+        <commons-fileupload.version>1.5</commons-fileupload.version>
         <shiro-spring.version>1.4.0</shiro-spring.version>
         <shiro-redis.version>2.4.2.1-RELEASE</shiro-redis.version>
         <swagger.version>2.9.2</swagger.version>
